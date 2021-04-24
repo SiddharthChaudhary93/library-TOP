@@ -1,8 +1,15 @@
 body,html{
     padding:0;
     margin:0;
+    background-color: #172d40;
+    color: #c29954;
 }
-
+.fa-book-open{
+    background-color: #c29954;
+    color:white;
+    padding: 10px;
+    border-radius: 30% ;
+}
 h1{
     text-align: center;
 }
@@ -11,16 +18,97 @@ h1{
     width:80%;
     margin:auto;
 }
+
 .add__book{
     /* display: block;
     margin: auto; */
     text-align: center;
     padding: 20px;
 }
+
+
+form{
+    display: none;
+    width:30%;
+    text-align: center;
+    padding: 30px;
+    border:5px solid #c29954;
+    margin: auto;
+    border-radius: 10%;
+
+}
+
+form > input{
+    margin-top: 20px;
+    height: 50px;
+    border-radius: 5px;
+    border:2px solid #172d40;
+    font-size: 20px;
+    color:#172d40
+}
+form>label{
+    display: none;
+}
+.form--display{
+    display: block;
+    position: absolute;
+    background-color: white;
+    top:10px;left:0;bottom:10px;right:0;
+    
+}
+
+.fa-times:hover{
+    transform: rotate(90deg);
+    transition: all 0.5s;
+}
+.add__book--btn{
+    font-size: 20px;
+    padding:10px;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    
+}
+.add__book--btn::before{
+    font-family: 'Font Awesome 5 Free';
+    content:'\f0f6';
+    font-weight: 900;
+    background-color: black;
+    
+}
+
+hr{
+    background-color: #c29954;
+    border:none;
+    height:2px;
+}
+.add__book__form{
+    position: fixed;
+    bottom: 50px;
+    right:50px;
+    padding:20px;
+    font-size: 30px;
+    margin: auto;
+    color:#c29954;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    
+}
+
+.add__book__form:hover{
+    transform:scale(1.2) rotate(90deg);
+    transition: all 0.5s;
+}
+
+
+
+
 .result{
     margin-top:50px;
     display:grid;
-    display: 4px solid blue;
+    
     grid-template-columns: repeat(3,1fr);
     grid-gap: 20px;
     text-transform: capitalize;
@@ -30,23 +118,21 @@ h1{
     display:flex;
     justify-content: space-between;
     flex-direction: column;
-    border:1px solid red;
-    padding:20px;
+    border:2px solid #c29954;
+    padding:10px;
+    border-radius: 10px;
+
 }
 
 .result_flex .name{
     font-size:50px;
     text-align: center;
-
-}
-.result_flex .author{
 }
 
-.result_flex .pages{
-}
 
 .options .read--yes{
     background-color:#4e8d4e;
+
 }
 .options .read--no{
     background-color:#ac3939;
@@ -58,18 +144,22 @@ h1{
     justify-content: center;
     width: 80%;
     margin:auto;
-    height: 100px;
+    height: 60px;
+    grid-gap: 10px;
     
 }
-
+.options>button{
+    font-size: 20px;
+}
 .result_flex .options .read{
-    grid-column:span 2;
+    
     color:white
 }
-
-.options>*{
-    font-size: 30px;
+.fa-minus-circle{
     
+    color:#ac3939;
+    border-radius: 50%;
+    font-size: 30px;
 }
 
 .result_flex .author__page{
@@ -93,7 +183,7 @@ button:hover{
         
     }
     .result_flex .options{
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(2,1fr);
         height: 80px;
         
     }
@@ -106,11 +196,14 @@ button:hover{
 }
 
 @media screen and (max-width:600px) {
+    form{
+        width: 60%;
+    }
     .result{
         grid-template-columns: repeat(1,1fr);
     }
     .result_flex .options{
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(2,1fr);
         height: 50px;
         
     }

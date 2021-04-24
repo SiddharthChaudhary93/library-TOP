@@ -55,8 +55,8 @@ function addElement(values){
                 <p class='pages'>${values[2]} pages in total</p>
             </div>
             <div class='options'>
-                <button class='add'>+</button>
-                <button class='remove' value='${id}'>-</button>
+                
+                <button class='remove' value='${id}'><i class="fas fa-minus-circle"></i></button>
                 <button class='${values[3]==='yes' ? 'read--yes':'read--no'} read'>Read : ${values[3]}</button>
             </div>
         </div>
@@ -71,13 +71,15 @@ function addElement(values){
     
     
 }
-// window.location.reload();
+
 form.addEventListener('submit',getValues);
 
 allBooks.forEach(book=>{
     addElement(book);
 });
 
+
+//change the color and the text
 const readButtons = document.querySelectorAll('.read');
 function changeRead(){
     if(this.innerHTML.includes('yes')){
@@ -96,6 +98,9 @@ readButtons.forEach(readBtn => {
     readBtn.addEventListener('click',changeRead);
 });
 
+
+
+//remove an element
 const removeButtons = document.querySelectorAll('.remove');
 
 function removeElement(){
@@ -114,3 +119,20 @@ removeButtons.forEach(button=>{
     button.addEventListener('click',removeElement);
 })
 
+//adding the form
+const displayFormBtn = document.querySelector('.add__book__form');
+
+displayFormBtn.addEventListener('click',displayForm)
+
+function displayForm(){
+    form.classList.add('form--display');
+}
+
+//close the form
+const formCross = document.querySelector('.fa-times');
+
+formCross.addEventListener('click',formClose);
+
+function formClose(){
+    form.classList.remove('form--display');
+}

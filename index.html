@@ -6,21 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <h1>My<span class='title--color'>Book<span>List</h1>
+    
+    <h1><i class='fas fa-book-open '></i> My<span class='title--color'>Book<span>List</h1>
     <div class='container'>
+        <button class='add__book__form'><i class='fa fa-plus'></i></button>
         <form action="" id='details'>
+            <i class='fa fa-times fa-pull-right'></i>
+            <br>
             <label for="book">Name:</label>
             <input type="text" name='book' id='book' placeholder="Name Of the Book" required>
+            <br>
             <label for="author">Author</label>
             <input type="text" name='author' id='author' placeholder="Author" required>
+            <br>
             <label for="pages">Pages:</label>
             <input type="text" name='pages' id='pages' placeholder="Pages" required>
-            <label for="read">Read</label>
+            <br>
+            <label for="read">Read:</label>
             <input type="text" name="read" id="read" placeholder="Yes or No" >
-            <input type="submit" value='+Book'>
+            <br>
+            
+            <input type="submit" class=' add__book--btn' value='AddBook'>
         </form>
+        <hr>
         <div class='result'></div>
     </div>
    
