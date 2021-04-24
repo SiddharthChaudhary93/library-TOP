@@ -11,7 +11,12 @@ body,html{
     border-radius: 30% ;
 }
 h1{
+    display: block;
     text-align: center;
+    
+}
+h1>span{
+    color: white;
 }
 
 .container{
@@ -46,36 +51,44 @@ form > input{
     font-size: 20px;
     color:#172d40
 }
+
+
+
 form>label{
     display: none;
 }
 .form--display{
     display: block;
-    position: absolute;
+    position: fixed;
     background-color: white;
-    top:10px;left:0;bottom:10px;right:0;
+    top:30px;left:0;bottom:70px;right:0;
+    z-index: 1;
     
 }
-
+.fa-times{
+    transition: all 0.5s;
+}
 .fa-times:hover{
     transform: rotate(90deg);
     transition: all 0.5s;
+    color:#ac3939
 }
 .add__book--btn{
-    font-size: 20px;
-    padding:10px;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
+    font-size: 50px;
+    padding:0 20px;
+    font-weight: bolder;
+    background-color: #172d40;
+    color:white;
+    height: 70px;
+    text-align: center;
+    transition: all 0.2s;
     
 }
-.add__book--btn::before{
-    font-family: 'Font Awesome 5 Free';
-    content:'\f0f6';
-    font-weight: 900;
-    background-color: black;
-    
+.add__book--btn:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.2s;
+    background-color:#4e8d4e;
 }
 
 hr{
@@ -94,12 +107,14 @@ hr{
     height: 80px;
     width: 80px;
     border-radius: 50%;
+    transition: all 0.5s;
     
 }
 
 .add__book__form:hover{
     transform:scale(1.2) rotate(90deg);
     transition: all 0.5s;
+    color:#4e8d4e
 }
 
 
@@ -127,6 +142,7 @@ hr{
 .result_flex .name{
     font-size:50px;
     text-align: center;
+    font-weight: bold;
 }
 
 
@@ -163,19 +179,30 @@ hr{
 }
 
 .result_flex .author__page{
-    display: flex;
-    justify-content: space-around;
-    font-size: 20px;
+    text-align: center;
+
     
 }
 button{
     border-radius: 5px;
     border:1px solid #1d3849;
+    z-index: 0;
 }
 button:hover{
     cursor: pointer;
     transform:scale(1.1);
     border-radius: 5px;
+}
+
+footer{
+    font-size: 15px;
+    text-align: center;
+    display: block;
+    background-color: white;
+    position: fixed;
+    width:100%;
+    line-height: 0;
+    bottom:0;
 }
 @media screen and (max-width:1200px) {
     .result{
